@@ -8,9 +8,9 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IndexComponent } from './components/index/index.component';
-import { CiudadComponent } from './components/ciudad/ciudad.component';
-import { SedeComponent } from './components/sede/sede.component';
-import { UsuarioComponent } from './components/usuario/usuario.component';
+import { ManageProductComponent } from './components/manage-product/manage-product.component';
+import { ViewProductComponent } from './components/view-product/view-product.component';
+import { CartProductComponent } from './components/cart-product/cart-product.component';
 
 
 export const routes = [
@@ -21,9 +21,9 @@ export const routes = [
   declarations: [
     AdminComponent,
     IndexComponent,
-    CiudadComponent,
-    SedeComponent,
-    UsuarioComponent,
+    ManageProductComponent,
+    ViewProductComponent,
+    CartProductComponent,
   ],
   imports: [
     CommonModule,
@@ -36,7 +36,11 @@ export const routes = [
     AdminComponentsModule
   ],
   exports : [
-    AdminComponent
+    AdminComponent,
+    ManageProductComponent,
+    ViewProductComponent,
+    CartProductComponent
+    
   ],
   providers :[
     

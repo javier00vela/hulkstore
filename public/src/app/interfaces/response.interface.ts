@@ -1,3 +1,4 @@
 export interface IResponse<T>{
-    data : T[],
+    data : T[] | T | JSON,
+    message : string 
 }
