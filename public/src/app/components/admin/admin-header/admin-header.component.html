@@ -6,11 +6,13 @@
   <span class="example-spacer"></span>
   <div fxShow="true" fxHide.lt-md="true">
     <a mat-button routerLink="/admin">Inicio</a>
-    <a mat-button routerLink="/admin/sede">Registrar Sede</a>
-    <a mat-button routerLink="/admin/ciudad">Registrar Ciudad</a>
-    <a mat-button routerLink="/admin/usuario">Consultar Usuario- Sede</a>
+    <a mat-button *ngIf="idRole == 1" routerLink="/admin/product">Ver mis Productos</a>
+    <a mat-button *ngIf="idRole == 2" routerLink="/admin/category">Ver Productos</a>
     <a mat-button (click)="logOut()" >Salir</a>
   </div>
+  <div class="right-page">
+        <img src="assets/cart.png" routerLink="/admin/cart" *ngIf="idRole == 2" title="carrito" class="cart" width="50" height="40" >
+        <img src="assets/logo.png" title="hulk-store" class="logo"  width="50" height="50" >
+  </div>
 
-  <img src="https://co.fitness24seven.com/wp-content/themes/bolts-wp/img/icon-cardio-warm.svg" width="50" height="50" >
 </div>

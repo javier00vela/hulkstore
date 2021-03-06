@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="photo-div">
+        <img class="photo" [src]="Element.photo">
+    </div>
+    <hr>
+    <h4>{{ Element.name | uppercase }}</h4>
+    <p class="stock" *ngIf="!isCategory"> {{ 'Stock :'+ Element.stock}}</p>
+    <p class="description">{{ Element.description}}</p>
+</div>
+
+<div *ngIf="isCategory">
+    <button class="btn btn-success btn-block" [routerLink]="['/admin/'+Element.id+'/product']">Ver Productos</button>
+</div>
+
+<div class="row" *ngIf="!isCategory">
+    <div class="col-sm-6" *ngIf="profile == 2">
+        <button class="btn btn-primary btn-block" [routerLink]="['/admin/product/details/'+Element.id]">Detalle</button>
+    </div>
+
+    <div class="col-sm-12" *ngIf="profile == 1">
+        <button class="btn btn-primary btn-block" [routerLink]="['/admin/product/manage/'+Element.id]">Editar</button>
+    </div>
+
+    <div class="col-sm-6" *ngIf="profile == 2">
+        <button class="btn btn-success btn-block" (click)="addProduct(Element)">Agregar</button>
+    </div>
+    
+</div>

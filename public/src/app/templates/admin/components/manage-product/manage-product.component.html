@@ -1,1 +1,37 @@
-<p>manage-product works!</p>
+<div class="container-fluid text-center m-2">
+    <hr>
+       <h1> {{ (isUpdated) ? 'Actualizar Producto' : 'Agregar Producto' }} </h1>
+    <hr>
+    <div class="container text-center">
+        <div class="row">
+                <div class="col-sm-6">
+                    <label>Imagen</label>
+                    <img class="photo" [src]="productDto.photo">
+                    <button (click)="file.click()" class="btn btn-block btn-primary">Subir Archivo</button>
+                    <input #file type="file" (change)="loadImageProduct(file)" style="display: none;">
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" class="form-control" placeholder="nombre" [(ngModel)]="productDto.name">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Stock</label>
+                        <input type="number" class="form-control" placeholder="stock" [(ngModel)]="productDto.stock">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Descripción</label>
+                        <textarea rows="11" class="form-control" placeholder="descripción" [(ngModel)]="productDto.description"></textarea>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-12 m-2">
+                    <button (click)="sendData()" class="btn btn-success btn-block">Enviar</button>
+                </div>
+        </div>
+    </div>
+</div>

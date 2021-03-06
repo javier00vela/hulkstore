@@ -1,6 +1,18 @@
 .card{
-    background: white;
+    background: rgb(0, 0, 0);
     margin: 25px;
     padding: 30px;
-    border: 2px solid orange;
+    border: 5px solid rgb(0, 155, 26);
+}
+
+p , h1 {
+    color :  rgb(0, 155, 26)
+}
+
+label{
+    color : white
+}
+
+::ng-deep body , html{
+    background: black !important;
 }

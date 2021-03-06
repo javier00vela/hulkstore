@@ -4,25 +4,32 @@
     }
 
     .primary{
-        background:rgb(241, 174, 48);
-    
+        background:rgb(0, 0, 0);
+        border-bottom: 5px solid rgb(1, 218, 1);
         a{
             color: white;
         }
     }
     
-    img{
+    .logo{
         position:absolute;
         right: 0;
         top: 0;
         margin: 10px;
+    }
+
+    .cart{
+        position:absolute;
+        right: 100px;
+        top: 0;
+        margin: 17px;
     }
 }
 
 @media(max-width:960px){
 
     .primary{
-        background:rgb(241, 174, 48);
+        background:rgb(0, 0, 0);
         height: 200px;
         width: 100%;
         position:absolute;
@@ -39,9 +46,16 @@
         width: 100%;
     }
     
-    img{
+    .logo{
         position:absolute;
         right: 0;
+        top: 0;
+        margin: 10px;
+    }
+
+    .cart{
+        position:absolute;
+        right: 15px;
         top: 0;
         margin: 10px;
     }

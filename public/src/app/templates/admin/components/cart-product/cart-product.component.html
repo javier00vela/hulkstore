@@ -1,1 +1,31 @@
-<p>cart-product works!</p>
+<div class="container-fluid text-center m-2">
+    <hr>
+    <h1>Carrito de compras</h1>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <td>Imagen</td>
+                        <td>Nombre</td>
+                        <td>Cantidad</td>
+                        <td>Acciones</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cart of listaCarrito | async">
+                        <td>
+                            <img class="img-rounded" width="100" height="100" [src]="cart.product.photo">
+                        </td>
+                        <td>{{ cart.product.name }}</td>
+                        <td>{{ cart.amount }}</td>
+                        <td>
+                            <button class="btn btn-xs btn-danger">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -11,30 +11,32 @@ import { environment } from 'src/environments/environment';
 })
 export class CrudService {
 
+  protected basePath = environment.router.back; 
+
   constructor(protected http: HttpClient) { }
 
   protected get(route: string): Observable<IResponse<any>> {
-    return this.http.get(`${environment.router.back}/${route}`).pipe(map((data: any) => data));
+    return this.http.get(`${this.basePath}/${route}`).pipe(map((data: any) => data));
   }
 
   protected getById(route: string, id: number): Observable<IResponse<any>> {
-    return this.http.get(`${environment.router.back}/${route}/${id}`).pipe(map((data) => data as IResponse<any>));
+    return this.http.get(`${this.basePath}/${route}/${id}`).pipe(map((data) => data as IResponse<any>));
   }
 
   protected post(route: string, data: JSON | Object | []): Observable<IResponse<any>> {
-    return this.http.post(`${environment.router.back}/${route}`, data).pipe(map((data) => data as IResponse<any>));
+    return this.http.post(`${this.basePath}/${route}`, data).pipe(map((data) => data as IResponse<any>));
   }
 
   protected put(route: string, data: JSON | Object | []): Observable<IResponse<any>> {
-    return this.http.put(`${environment.router.back}/${route}`, data).pipe(map((data: any) => data));
+    return this.http.put(`${this.basePath}/${route}`, data).pipe(map((data: any) => data));
   }
 
   protected putById(route: string, id: number, data: JSON | Object | []): Observable<IResponse<any>> {
-    return this.http.put(`${environment.router.back}/${route}/${id}`, data).pipe(map((data) => data as IResponse<any>));
+    return this.http.put(`${this.basePath}/${route}/${id}`, data).pipe(map((data) => data as IResponse<any>));
   }
 
   protected deleteById(route: string, id: number): Observable<IResponse<any>> {
-    return this.http.delete(`${environment.router.back}/${route}/${id}`).pipe(map((data) => data as IResponse<any>));
+    return this.http.delete(`${this.basePath}/${route}/${id}`).pipe(map((data) => data as IResponse<any>));
   }
 
 }

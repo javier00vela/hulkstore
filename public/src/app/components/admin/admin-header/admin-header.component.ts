@@ -8,15 +8,19 @@ import { AuthService } from 'src/app/utils/auth/auth.service';
   styleUrls: ['./admin-header.component.scss']
 })
 export class AdminHeaderComponent implements OnInit {
-
-  constructor(private auth:AuthService , private router: Router) { }
+  public idRole : number = 2;
+  constructor(private _auth:AuthService , private _router: Router) { }
 
   ngOnInit(): void {
   }
 
+  role(){
+
+  }
+
   logOut(){
-    this.auth.logout(()=>{
-      this.router.navigate(["login"]);
+    this._auth.logout(()=>{
+      this._router.navigate(["login"]);
     })
   }
 

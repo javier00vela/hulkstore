@@ -1,0 +1,31 @@
+<div class="container-fluid text-center m-2">
+    <hr>
+       <h1> {{ productDto.name | uppercase }} </h1>
+    <hr>
+    <div class="container text-center">
+        <div class="row">
+                <div class="col-sm-6">
+                    <label>Imagen</label>
+                    <img class="photo" [src]="productDto.photo">
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" disabled class="form-control" placeholder="nombre" [(ngModel)]="productDto.name">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Stock</label>
+                        <input type="number" disabled class="form-control" placeholder="stock" [(ngModel)]="productDto.stock">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Descripción</label>
+                        <textarea rows="11" disabled class="form-control" placeholder="descripción" [(ngModel)]="productDto.description"></textarea>
+                    </div>
+
+                </div>
+        </div>
+    </div>
+</div>

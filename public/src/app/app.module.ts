@@ -9,8 +9,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminModule } from './templates/admin/admin.module';
 import { LoginModule } from './templates/login/login.module';
 import { FormsModule } from '@angular/forms';
-
-
 @NgModule({
   declarations: [
     AppComponent,

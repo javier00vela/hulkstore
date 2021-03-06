@@ -4,9 +4,11 @@ import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import {MatButtonModule } from '@angular/material/button';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
+import { CardComponent } from './card/card.component';
 @NgModule({
   declarations: [
     AdminHeaderComponent,
+    CardComponent,
   ],
   imports: [
     CommonModule,
@@ -16,6 +18,7 @@ import { RouterModule } from '@angular/router';
   ],
   exports : [
     AdminHeaderComponent,
+    CardComponent
   ]
 })
 export class AdminComponentsModule { }

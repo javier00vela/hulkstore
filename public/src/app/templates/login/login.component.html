@@ -1,6 +1,6 @@
 
 <div class="container ">
-    <h1 class="text-center">Prueba gimnasio</h1>
+    <h1 class="text-center">Hulk Store</h1>
 </div>
 <hr>
 <div class="container-fluid">
@@ -11,10 +11,10 @@
                 <h1 class="text-center">Login</h1>
                 <form [formGroup]="loginForm" (ngSubmit)="enviarLogin(loginForm)">
                     <div class="form-group">
-                        <label>Cedula</label>
-                        <input type="text" class="form-control" formControlName="identificacion" placeholder="identificación">
+                        <label>Usuario</label>
+                        <input type="text" class="form-control" formControlName="usuario" placeholder="usuario">
                         <div class="error"
-                            *ngIf="loginForm.get('identificacion').hasError('required') && loginForm.get('identificacion').touched">
+                            *ngIf="loginForm.get('usuario').hasError('required') && loginForm.get('usuario').touched">
                             Identificación requerida
                         </div>
                     </div>
@@ -57,51 +57,28 @@
                     </div>
 
                     <div class="form-group">
-                        <label>ciudad</label>
-                        <select type="text" placeholder="ciudad" class="form-control" formControlName="id_ciudad">
-                            <option *ngFor="let ciudad of listaCiudades | async " [value]="ciudad.id">{{ ciudad.nombre
-                                }}
-                            </option>
-                        </select>
-                        <div class="error"
-                            *ngIf="registroForm.get('id_ciudad').hasError('required') && registroForm.get('id_ciudad').touched">
-                            ciudad requerida
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>sede</label>
-                        <select type="text" placeholder="sede" class="form-control" formControlName="id_sede">
-                            <option *ngFor="let sede of listaSedes | async " [value]="sede.id">{{ sede.nombre }}
-                            </option>
-                        </select>
-                        <div class="error"
-                            *ngIf="registroForm.get('id_sede').hasError('required') && registroForm.get('id_sede').touched">
-                            sede requerida
-                        </div>
-                    </div>
-
-
-                    <div class="form-group">
                         <label>rol</label>
                         <select type="text" class="form-control" formControlName="id_perfil">
                             <option value="1">Administrador</option>
                             <option value="2">Usuario</option>
                         </select>
                         <div class="error"
-                            *ngIf="registroForm.get('id_sede').hasError('required') && registroForm.get('id_sede').touched">
+                            *ngIf="registroForm.get('id_perfil').hasError('required') && registroForm.get('id_perfil').touched">
                             rol requerido
                         </div>
                     </div>
 
-
                     <div class="form-group">
-                        <label>identificación</label>
-                        <input placeholder="identificación" type="text" class="form-control" formControlName="identificacion">
+                        <label>usuario</label>
+                        <input placeholder="usuario" type="text" class="form-control" formControlName="usuario">
                         <div class="error"
-                            *ngIf="registroForm.get('identificacion').hasError('required') && registroForm.get('identificacion').touched">
-                            identificación requerida
+                            *ngIf="registroForm.get('usuario').hasError('required') && registroForm.get('usuario').touched">
+                            usuario requerido
                         </div>
+                        <div class="error"
+                        *ngIf="registroForm.get('usuario').hasError('minlength') && registroForm.get('usuario').touched">
+                        El tamaño debe ser mayor a 4 letras
+                          </div>
                     </div>
 
                     <div class="form-group">
@@ -112,9 +89,6 @@
                             contraseña requerida
                         </div>
                     </div>
-
-
-
                     <button type="submit" class="btn btn-block btn-primary">Registrar</button>
                 </form>
             </div>

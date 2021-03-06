@@ -7,7 +7,7 @@ import * as moment from "moment";
 })
 export class AuthService {
 
-    public static setSession(authResult : any) {
+    public static setSession(authResult) {
         const expiresAt = moment().add(authResult.expiresIn,'second');
         localStorage.setItem('token', authResult.token);
         localStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()) );
@@ -16,6 +16,10 @@ export class AuthService {
     public isAuthed(){
         const token = localStorage.getItem('token');
        return ( token !== null && token !== undefined && token !== '' ? true : false );
+    }
+
+    public infoUser(){
+        return {id : 1}
     }
 
     public  logout(callaback: ()=> void) {
@@ -36,7 +40,11 @@ export class AuthService {
         const expiration:any = localStorage.getItem("expires_at");
         const expiresAt = JSON.parse(expiration);
         return moment(expiresAt);
-    }    
+    }   
+    
+    public getRole() : number{
+        return 2;
+    }
 }
           
           

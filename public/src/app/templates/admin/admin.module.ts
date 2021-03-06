@@ -11,6 +11,8 @@ import { IndexComponent } from './components/index/index.component';
 import { ManageProductComponent } from './components/manage-product/manage-product.component';
 import { ViewProductComponent } from './components/view-product/view-product.component';
 import { CartProductComponent } from './components/cart-product/cart-product.component';
+import { CategoryProductComponent } from './components/category-product/category-product.component';
+import { DetailsProductComponent } from './components/details-product/details-product.component';
 
 
 export const routes = [
@@ -24,6 +26,8 @@ export const routes = [
     ManageProductComponent,
     ViewProductComponent,
     CartProductComponent,
+    CategoryProductComponent,
+    DetailsProductComponent,
   ],
   imports: [
     CommonModule,
